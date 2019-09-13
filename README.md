@@ -23,4 +23,26 @@
 ###6. 컴포넌트 반복
 - 6.2 데이터 배열을 컴포넌트 배열로 map하기
 - 6.3 key
-- 6.4 응용    
+- 6.4 응용
+###7. 컴포넌트의 라이플사이클 메서드
+- 7.1 이해
+    - 마운트
+        - DOM이 생성되고 웹 브라우저상에 나타나는 것을 마운트라 함
+        - constructor: 컴포넌트를 새로 만들 때 마다 호출되는 클래스 생성자 메서드
+        - getDerivedStateFromProps: props에 있는 값을 state에 동기화 하는 메서드
+        - render: 우리가 준비한 UI를 렌더링하는 메서드
+        - componentDidMount 컴포넌트가 웹 브라우저상에 나타난 후 호출하는 메서드
+    - 업데이트
+        - 컴포넌트가 업데이트 할 때
+            1. props가 바뀔 때
+            2. state가 바뀔 때
+            3. 부모 컴포넌트가 리렌더링될 때
+            4. this.forceUpdate로 강제로 렌더링을 트리거 할 때
+        - getDerivedStateFromProps: 이 메서드는 마운트 과정에도 호출, props가 바뀌어서 업데이트할 때도 호출
+        - shouldComponentUpdate: 컴포넌트가 리렌더링을 해야할 지말지 결정하는 메서드, false를 반환하면 아래 메서드들을 호출하지 않음
+        - render: 컴포넌트를 리렌더링
+        - getSnapshotBeforeUpdate: 컴포넌트의 변화를 DOM에 반영하기 바로 직전에 호출하는 메서드
+        - componentDidUpdate: 컴포넌트의 업데이트 작업이 끝난 후 호출하는 메서드
+    - 언마운트: 마운트의 반대 과정, 컴포넌트를 DOM에서 제거하는 것
+        - componentWillUnmount: 컴포넌트가 웹 브라우저상에서 사라지기 전에 호출하는 메서드
+    
