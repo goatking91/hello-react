@@ -23,6 +23,7 @@ class ValidationSample extends Component {
       clicked: true,
       validated: password === '0000',
     });
+    this.input.focus();
   };
 
   render() {
@@ -31,6 +32,9 @@ class ValidationSample extends Component {
     return (
       <div>
         <input
+          ref={instance => {
+            this.input = instance;
+          }}
           type="password"
           value={password}
           onChange={this.handleChange}
