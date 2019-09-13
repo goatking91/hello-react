@@ -11,12 +11,31 @@ const propTypes = {
 };
 
 class MyComponent extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      number: 0,
+    };
+  }
+
   render() {
     const { name, age } = this.props;
+    const { number } = this.state;
     return (
       <div>
         <p>안녕하세요, 제 이름은 {name} 입니다.</p>
         <p>저는 {age}살 입니다.</p>
+        <p>숫자: {number}</p>
+        <button
+          type="button"
+          onClick={() => {
+            this.setState({
+              number: number + 1,
+            });
+          }}
+        >
+          더하기
+        </button>
       </div>
     );
   }
