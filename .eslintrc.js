@@ -4,6 +4,8 @@ module.exports = {
     'react/prefer-stateless-function': 0,
     'react/jsx-filename-extension': 0,
     'react/jsx-one-expression-per-line': 0,
+    'no-console': 0,
+    'no-alert': 0,
   },
   env: {
     browser: true,
